@@ -53,7 +53,10 @@ export default {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			}
-  		}
+  		},
+		fontFamily: {
+        protest: ['Protest Riot', 'sans-serif'], // Custom font from the web
+      }
   	}
   },
   plugins: [require("tailwindcss-animate")],
