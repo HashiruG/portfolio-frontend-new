@@ -2,14 +2,14 @@ import NavigationCustomized from "./components/ui/navigation-customized";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card, CardHeader } from "@/components/ui/card";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 function App() {
   return (
@@ -53,7 +53,7 @@ function App() {
         </div>
       </section>
 
-      <section className="flex flex-col items-center justify-center">
+      <section className="flex flex-col items-center justify-center h-screen">
         <h1 className="text-5xl font-extrabold mb-10">My Skills</h1>
 
         <div className="w-5/6 flex justify-center">
@@ -117,6 +117,20 @@ function App() {
                 />
                 <img
                   className="h-[6rem] w-[6rem] my-4"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original-wordmark.svg"
+                />
+
+                <img
+                  className="h-[6rem] w-[6rem] my-4"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg"
+                />
+                <img
+                  className="h-[6rem] w-[6rem] my-4"
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
+                />
+
+                <img
+                  className="h-[6rem] w-[6rem] my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-plain-wordmark.svg"
                 />
                 <img
@@ -134,7 +148,7 @@ function App() {
               </Card>
             </TabsContent>
             <TabsContent value="ml">
-              <Card className="w-full max-w-8xl mx-auto flex flex-wrap p-4 gap-7 justify-center">
+              <Card className="w-full max-w-8xl mx-auto flex flex-wrap p-4 gap-7 justify-center mt-12">
                 <img
                   className="h-[6rem] w-[6rem] my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original-wordmark.svg"
@@ -156,8 +170,60 @@ function App() {
           </Tabs>
         </div>
       </section>
+      <section className="flex flex-col items-center justify-center">
+        <h1 className="text-5xl font-extrabold mb-10">My Projects</h1>
 
-      
+        <Carousel>
+          <CarouselContent>
+        
+            <CarouselItem className="basis-1/2">
+              <Card>
+                <div className="flex">
+                  <img
+                    className="w-64 h-64"
+                    src="https://github.com/shadcn.png"
+                    alt="Project Image"
+                  />
+
+                  <CardHeader className="flex flex-col items-center">
+                    <h2 className="text-2xl font-semibold mx-auto">
+                      Mix Matic Pro
+                    </h2>
+
+                    <p className="text-l text-muted-foreground">
+                      An IT undergraduate at University of Moratuwa
+                    </p>
+                  </CardHeader>
+                </div>
+              </Card>
+            </CarouselItem>
+
+            <CarouselItem className="basis-1/2">
+              <Card>
+                <div className="flex">
+                  <img
+                    className="w-64 h-64"
+                    src="https://github.com/shadcn.png"
+                    alt="Project Image"
+                  />
+
+                  <CardHeader className="flex flex-col items-center">
+                    <h2 className="text-2xl font-semibold mx-auto">
+                      Project Two
+                    </h2>
+
+                    <p className="text-l text-muted-foreground">
+                      Another project description here.
+                    </p>
+                  </CardHeader>
+                </div>
+              </Card>
+            </CarouselItem>
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </section>
     </>
   );
 }
