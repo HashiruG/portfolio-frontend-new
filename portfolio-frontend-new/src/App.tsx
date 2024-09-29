@@ -24,7 +24,7 @@ function App() {
             { href: "#about", description: "Contact" },
           ]}
         ></NavigationCustomized>
-        <div className="flex flex-col-reverse md:flex-row flex-grow items-center justify-center">
+        <div className="flex flex-col-reverse md:flex-row flex-grow items-center justify-center md:mt-0 mt-20">
           <div className="flex flex-col items-center md:items-end justify-center w-full md:w-38/100 p-1">
             <h1 className="text-7xl md:text-9xl font-extrabold text-center pt-2 md:text-right">
               Hello!
