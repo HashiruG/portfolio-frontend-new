@@ -2,7 +2,7 @@ import NavigationCustomized from "./components/ui/navigation-customized";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardHeader } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
@@ -56,8 +56,8 @@ function App() {
       <section className="flex flex-col items-center justify-center h-screen">
         <h1 className="text-5xl font-extrabold mb-10">My Skills</h1>
 
-        <div className="w-5/6 flex justify-center">
-          <Tabs defaultValue="programming" className="w-full max-w-xl">
+        <div className="w-5/6 flex justify-center mt-10">
+          <Tabs defaultValue="webdev" className="w-full max-w-2xl">
             <TabsList className="flex justify-center mb-6">
               <TabsTrigger value="programming">
                 Programming & Scripting
@@ -66,7 +66,7 @@ function App() {
               <TabsTrigger value="ml">Machine Learning</TabsTrigger>
             </TabsList>
             <TabsContent value="programming">
-              <Card className="w-full max-w-8xl mx-auto flex flex-wrap p-4 gap-7 justify-center">
+              <Card className="w-full max-w-8xl mx-auto flex flex-wrap p-4 gap-12 py-6 justify-center">
                 <img
                   className="h-[6rem] w-[6rem] my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg"
@@ -102,7 +102,7 @@ function App() {
               </Card>
             </TabsContent>
             <TabsContent value="webdev">
-              <Card className="w-full max-w-8xl mx-auto flex flex-wrap p-4 gap-7 justify-center">
+              <Card className="w-full max-w-8xl mx-auto flex flex-wrap p-4 gap-12 py-6 justify-center">
                 <img
                   className="h-[6rem] w-[6rem] my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg"
@@ -148,7 +148,7 @@ function App() {
               </Card>
             </TabsContent>
             <TabsContent value="ml">
-              <Card className="w-full max-w-8xl mx-auto flex flex-wrap p-4 gap-7 justify-center mt-12">
+              <Card className="w-full max-w-8xl mx-auto flex flex-wrap p-4 gap-12 py-6 justify-center">
                 <img
                   className="h-[6rem] w-[6rem] my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original-wordmark.svg"
@@ -170,59 +170,66 @@ function App() {
           </Tabs>
         </div>
       </section>
-      <section className="flex flex-col items-center justify-center">
+
+      <section className="flex flex-col items-center justify-center min-h-screen">
         <h1 className="text-5xl font-extrabold mb-10">My Projects</h1>
 
-        <Carousel>
+        <Carousel className="w-full max-w-5xl mt-16">
           <CarouselContent>
-        
-            <CarouselItem className="basis-1/2">
-              <Card>
-                <div className="flex">
-                  <img
-                    className="w-64 h-64"
-                    src="https://github.com/shadcn.png"
-                    alt="Project Image"
-                  />
-
-                  <CardHeader className="flex flex-col items-center">
-                    <h2 className="text-2xl font-semibold mx-auto">
-                      Mix Matic Pro
-                    </h2>
-
-                    <p className="text-l text-muted-foreground">
-                      An IT undergraduate at University of Moratuwa
-                    </p>
-                  </CardHeader>
+            {Array.from({ length: 3 }).map((_, index) => (
+              <CarouselItem className="basis-1/2" key={index}>
+                <div className="p-1">
+                  <Card>
+                    <CardContent className="flex p-4">
+                      <img
+                        className="w-72 h-72 border-1 rounded-lg"
+                        src="https://github.com/shadcn.png"
+                      ></img>
+                      <div className="flex flex-col justify-start  px-6 ">
+                        <h2 className="text-2xl font-semibold ">Hashiru Gunathilake</h2>
+                        <p className="text-sm text-muted-foreground">
+                          An IT undergraduate at University of Moratuwams
+                          </p>
+                      </div>
+                    </CardContent>
+                  </Card>
                 </div>
-              </Card>
-            </CarouselItem>
-
-            <CarouselItem className="basis-1/2">
-              <Card>
-                <div className="flex">
-                  <img
-                    className="w-64 h-64"
-                    src="https://github.com/shadcn.png"
-                    alt="Project Image"
-                  />
-
-                  <CardHeader className="flex flex-col items-center">
-                    <h2 className="text-2xl font-semibold mx-auto">
-                      Project Two
-                    </h2>
-
-                    <p className="text-l text-muted-foreground">
-                      Another project description here.
-                    </p>
-                  </CardHeader>
-                </div>
-              </Card>
-            </CarouselItem>
+              </CarouselItem>
+            ))}
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />
         </Carousel>
+      </section>
+
+      <section className="flex flex-col items-center my-20">
+        <h1 className="text-5xl font-bold mb-10">Connect with me</h1>
+        <div className="flex flex-wrap justify-center gap-7 border-2 border-slate-100 rounded-lg p-6">
+          <Button className="p-10" variant="outline">
+            <img
+              className="w-[6rem] h-[4rem]"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain-wordmark.svg"
+            />
+          </Button>
+          <Button className="p-10" variant="outline">
+            <img
+              className="w-[6rem] h-[4rem]"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg"
+            />
+          </Button>
+          <Button className="p-10" variant="outline">
+            <img
+              className="w-[6rem] h-[4rem]"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain-wordmark.svg"
+            />
+          </Button>
+          <Button className="p-10" variant="outline">
+            <img
+              className="w-[6rem] h-[4rem]"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg"
+            />
+          </Button>
+        </div>
       </section>
     </>
   );
