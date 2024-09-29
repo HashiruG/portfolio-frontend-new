@@ -20,149 +20,155 @@ function App() {
           navItems={[
             { href: "#about", description: "About" },
             { href: "#about", description: "Skills" },
-            { href: "#about", description: "projects" },
+            { href: "#about", description: "Projects" },
             { href: "#about", description: "Contact" },
           ]}
         ></NavigationCustomized>
-        <div className="flex flex-grow">
-          <div className="flex items-end flex-col justify-center w-1/3">
-            <h1 className="text-9xl font-extrabold">Hello!</h1>
-            <h2 className="text-4xl font-semibold ">
+        <div className="flex flex-col-reverse md:flex-row flex-grow items-center justify-center">
+          <div className="flex flex-col items-center md:items-end justify-center w-full md:w-38/100 p-1">
+            <h1 className="text-7xl md:text-9xl font-extrabold text-center pt-2 md:text-right">
+              Hello!
+            </h1>
+            <h2 className="text-3xl md:text-3xl font-semibold text-center md:text-right">
               I am Hashiru Gunathilake
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-2xl text-muted-foreground text-center md:text-right">
               An IT undergraduate at University of Moratuwa
             </p>
-            <div>
-              <Button className="mt-3 p-6">
-                <i className="devicon-github-original-wordmark text-4xl"></i>
+            <div className="flex justify-center md:justify-start mt-4">
+              <Button className="p-3 md:p-6">
+                <i className="devicon-github-original-wordmark text-2xl md:text-4xl"></i>
               </Button>
-              <Button className="mt-3 p-6 ml-5">
-                <i className="devicon-linkedin-plain-wordmark text-4xl"></i>
+              <Button className="p-3 md:p-6 ml-3 md:ml-5">
+                <i className="devicon-linkedin-plain-wordmark text-2xl md:text-4xl"></i>
               </Button>
-              <Button className="mt-3 p-6 ml-5">
-                <i className="devicon-github-original-wordmark text-4xl"></i>
+              <Button className="p-3 md:p-6 ml-3 md:ml-5">
+                <i className="devicon-github-original-wordmark text-2xl md:text-4xl"></i>
               </Button>
             </div>
           </div>
-          <div className="flex justify-center items-center w-2/3">
-            <Avatar className="w-[460px] h-[460px]">
+
+          <div className="flex justify-center items-center w-full md:w-62/100 p-4">
+            <Avatar className="w-[300px] h-[300px] md:w-[460px] md:h-[460px]">
               <AvatarImage src="https://github.com/shadcn.png" />
             </Avatar>
           </div>
         </div>
       </section>
 
-      <section className="flex flex-col items-center justify-center h-screen">
-        <h1 className="text-5xl font-extrabold mb-10">My Skills</h1>
+      <section className="flex flex-col items-center justify-center h-auto min-h-screen">
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-5 md:mb-10 md:mt-2 mt-20">
+          My Skills
+        </h1>
 
-        <div className="w-5/6 flex justify-center mt-10">
-          <Tabs defaultValue="webdev" className="w-full max-w-2xl">
-            <TabsList className="flex justify-center mb-6">
-              <TabsTrigger value="programming">
+        <div className="w-11/12 md:w-5/6 flex justify-center mt-8 md:mt-10">
+          <Tabs defaultValue="webdev" className="w-full max-w-2xl ">
+            <TabsList className="flex flex-wrap justify-center mb-2 md:mb-3">
+              <TabsTrigger className="text-[0.75rem] md:text-[0.95rem]" value="programming">
                 Programming & Scripting
               </TabsTrigger>
-              <TabsTrigger value="webdev">Web Development</TabsTrigger>
-              <TabsTrigger value="ml">Machine Learning</TabsTrigger>
+              <TabsTrigger className="text-[0.75rem] md:text-[0.95rem]" value="webdev">Web Development</TabsTrigger>
+              <TabsTrigger className="text-[0.75rem] md:text-[0.95rem]" value="ml">Machine Learning</TabsTrigger>
             </TabsList>
-            <TabsContent value="programming">
-              <Card className="w-full max-w-8xl mx-auto flex flex-wrap p-4 gap-12 py-6 justify-center">
+
+            <TabsContent className="mt-14 md:mt-10" value="programming">
+              <Card className="w-full flex flex-wrap p-4 gap-10 md:gap-12 py-6 justify-center">
                 <img
-                  className="h-[6rem] w-[6rem] my-4"
+                  className="h-[5rem] w-[5rem] md:h-[6rem] md:w-[6rem] my-3 md:my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg"
                 />
                 <img
-                  className="h-[6rem] w-[6rem] my-4"
+                  className="h-[5rem] w-[5rem] md:h-[6rem] md:w-[6rem] my-3 md:my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"
                 />
                 <img
-                  className="h-[6rem] w-[6rem] my-4"
+                  className="h-[5rem] w-[5rem] md:h-[6rem] md:w-[6rem] my-3 md:my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
                 />
                 <img
-                  className="h-[6rem] w-[6rem] my-4"
+                  className="h-[5rem] w-[5rem] md:h-[6rem] md:w-[6rem] my-3 md:my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg"
                 />
                 <img
-                  className="h-[6rem] w-[6rem] my-4"
+                  className="h-[5rem] w-[5rem] md:h-[6rem] md:w-[6rem] my-3 md:my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
                 />
                 <img
-                  className="h-[6rem] w-[6rem] my-4"
+                  className="h-[5rem] w-[5rem] md:h-[6rem] md:w-[6rem] my-3 md:my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/arduino/arduino-original-wordmark.svg"
                 />
                 <img
-                  className="h-[6rem] w-[6rem] my-4"
+                  className="h-[5rem] w-[5rem] md:h-[6rem] md:w-[6rem] my-3 md:my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg"
                 />
                 <img
-                  className="h-[6rem] w-[6rem] my-4"
+                  className="h-[5rem] w-[5rem] md:h-[6rem] md:w-[6rem] my-3 md:my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg"
                 />
               </Card>
             </TabsContent>
-            <TabsContent value="webdev">
-              <Card className="w-full max-w-8xl mx-auto flex flex-wrap p-4 gap-12 py-6 justify-center">
+
+            <TabsContent className="mt-14 md:mt-10" value="webdev">
+              <Card className="w-full flex flex-wrap p-4 gap-10 md:gap-12 py-6 justify-center">
                 <img
-                  className="h-[6rem] w-[6rem] my-4"
+                  className="h-[5rem] w-[5rem] md:h-[6rem] md:w-[6rem] my-3 md:my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg"
                 />
                 <img
-                  className="h-[6rem] w-[6rem] my-4"
+                  className="h-[5rem] w-[5rem] md:h-[6rem] md:w-[6rem] my-3 md:my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg"
                 />
                 <img
-                  className="h-[6rem] w-[6rem] my-4"
+                  className="h-[5rem] w-[5rem] md:h-[6rem] md:w-[6rem] my-3 md:my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original-wordmark.svg"
                 />
                 <img
-                  className="h-[6rem] w-[6rem] my-4"
+                  className="h-[5rem] w-[5rem] md:h-[6rem] md:w-[6rem] my-3 md:my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original-wordmark.svg"
                 />
-
                 <img
-                  className="h-[6rem] w-[6rem] my-4"
+                  className="h-[5rem] w-[5rem] md:h-[6rem] md:w-[6rem] my-3 md:my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original-wordmark.svg"
                 />
                 <img
-                  className="h-[6rem] w-[6rem] my-4"
+                  className="h-[5rem] w-[5rem] md:h-[6rem] md:w-[6rem] my-3 md:my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
                 />
-
                 <img
-                  className="h-[6rem] w-[6rem] my-4"
+                  className="h-[5rem] w-[5rem] md:h-[6rem] md:w-[6rem] my-3 md:my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-plain-wordmark.svg"
                 />
                 <img
-                  className="h-[6rem] w-[6rem] my-4"
+                  className="h-[5rem] w-[5rem] md:h-[6rem] md:w-[6rem] my-3 md:my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original-wordmark.svg"
                 />
                 <img
-                  className="h-[6rem] w-[6rem] my-4"
+                  className="h-[5rem] w-[5rem] md:h-[6rem] md:w-[6rem] my-3 md:my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg"
                 />
                 <img
-                  className="h-[6rem] w-[6rem] my-4"
+                  className="h-[5rem] w-[5rem] md:h-[6rem] md:w-[6rem] my-3 md:my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg"
                 />
               </Card>
             </TabsContent>
-            <TabsContent value="ml">
-              <Card className="w-full max-w-8xl mx-auto flex flex-wrap p-4 gap-12 py-6 justify-center">
+
+            <TabsContent className="mt-14 md:mt-10" value="ml">
+              <Card className="w-full flex flex-wrap p-4 gap-10 md:gap-12 py-6 justify-center">
                 <img
-                  className="h-[6rem] w-[6rem] my-4"
+                  className="h-[5rem] w-[5rem] md:h-[6rem] md:w-[6rem] my-3 md:my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original-wordmark.svg"
                 />
                 <img
-                  className="h-[6rem] w-[6rem] my-4"
+                  className="h-[5rem] w-[5rem] md:h-[6rem] md:w-[6rem] my-3 md:my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original-wordmark.svg"
                 />
                 <img
-                  className="h-[6rem] w-[6rem] my-4"
+                  className="h-[5rem] w-[5rem] md:h-[6rem] md:w-[6rem] my-3 md:my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg"
                 />
                 <img
-                  className="h-[6rem] w-[6rem] my-4"
+                  className="h-[5rem] w-[5rem] md:h-[6rem] md:w-[6rem] my-3 md:my-4"
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original-wordmark.svg"
                 />
               </Card>
@@ -171,25 +177,30 @@ function App() {
         </div>
       </section>
 
-      <section className="flex flex-col items-center justify-center min-h-screen">
-        <h1 className="text-5xl font-extrabold mb-10">My Projects</h1>
+      <section className="flex flex-col items-center justify-center min-h-screen px-4">
+        <h1 className="text-4xl md:text-5xl font-extrabold md:mt-0 mt-20 mb-6 md:mb-10">
+          My Projects
+        </h1>
 
-        <Carousel className="w-full max-w-5xl mt-16">
+        <Carousel className="w-full max-w-sm md:max-w-4xl mt-8">
           <CarouselContent>
             {Array.from({ length: 3 }).map((_, index) => (
-              <CarouselItem className="basis-1/2" key={index}>
+              <CarouselItem className="basis-full" key={index}>
                 <div className="p-1">
                   <Card>
-                    <CardContent className="flex p-4">
+                    <CardContent className="flex flex-col md:flex-row p-4">
                       <img
-                        className="w-72 h-72 border-1 rounded-lg"
+                        className="w-full md:w-72 md:h-72 border-1 rounded-lg mb-4 md:mb-0"
                         src="https://github.com/shadcn.png"
-                      ></img>
-                      <div className="flex flex-col justify-start  px-6 ">
-                        <h2 className="text-2xl font-semibold ">Hashiru Gunathilake</h2>
-                        <p className="text-sm text-muted-foreground">
-                          An IT undergraduate at University of Moratuwams
-                          </p>
+                        alt="Project Image"
+                      />
+                      <div className="flex flex-col justify-start px-0 md:px-6">
+                        <h2 className="text-xl md:text-2xl font-semibold">
+                          Hashiru Gunathilake
+                        </h2>
+                        <p className="text-sm md:text-base text-muted-foreground">
+                        o eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similiquur aut perferendis doloribus asperiores repellat."
+                        </p>
                       </div>
                     </CardContent>
                   </Card>
@@ -197,13 +208,15 @@ function App() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <div className="flex justify-between">
+            <CarouselPrevious />
+            <CarouselNext />
+          </div>
         </Carousel>
       </section>
 
-      <section className="flex flex-col items-center my-20">
-        <h1 className="text-5xl font-bold mb-10">Connect with me</h1>
+      <section className="flex flex-col items-center my-20 mx-4">
+        <h1 className="text-4xl md:text-5xl font-bold mb-10">Connect with me</h1>
         <div className="flex flex-wrap justify-center gap-7 border-2 border-slate-100 rounded-lg p-6">
           <Button className="p-10" variant="outline">
             <img

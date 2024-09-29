@@ -1,3 +1,4 @@
+
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -9,8 +10,8 @@ import {
 
 export default function NavigationCustomized(props) {
   return (
-    <nav className="flex justify-between p-5">
-      <div>
+    <nav className="flex justify-center md:justify-between p-5">
+      <div className="hidden md:block">
         <h1 className="text-5xl font-protest">{props.logo}</h1>
       </div>
       <NavigationMenu>
