@@ -3,6 +3,15 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea"
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 import {
   Carousel,
   CarouselContent,
@@ -244,6 +253,18 @@ function App() {
           </Button>
         </div>
       </section>
+      <Dialog>
+  <DialogTrigger className="fixed right-[5%] bottom-[7%] "><Button>Chat</Button></DialogTrigger>
+  <DialogContent>
+  <div className="flex w-full gap-2">
+      <Textarea placeholder="Type your message here."/>
+      <div className="flex items-center">
+      <Button>Send message</Button>
+      </div>
+      
+    </div>
+  </DialogContent>
+</Dialog>
     </>
   );
 }
