@@ -1,9 +1,10 @@
+import { useState } from "react";
 import NavigationCustomized from "./components/ui/navigation-customized";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
-import { Textarea } from "@/components/ui/textarea"
+import { Textarea } from "@/components/ui/textarea";
 import {
   Dialog,
   DialogContent,
@@ -11,7 +12,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
+} from "@/components/ui/dialog";
 import {
   Carousel,
   CarouselContent,
@@ -19,8 +20,23 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { log } from "console";
 
 function App() {
+  const [input, setInput] = useState("");
+  const [messages, setMessages] = useState([]);
+
+  const handleChange = (e) => {
+    setInput(e.target.value);
+  };
+
+  const handleSubmit = () => {
+    console.log(input);
+    setMessages((prev) => [...prev, input]);
+
+    
+  };
+
   return (
     <>
       <section className="flex flex-col min-h-screen">
@@ -73,11 +89,24 @@ function App() {
         <div className="w-11/12 md:w-5/6 flex justify-center mt-8 md:mt-10">
           <Tabs defaultValue="webdev" className="w-full max-w-2xl ">
             <TabsList className="flex flex-wrap justify-center mb-2 md:mb-3">
-              <TabsTrigger className="text-[0.75rem] md:text-[0.95rem]" value="programming">
+              <TabsTrigger
+                className="text-[0.75rem] md:text-[0.95rem]"
+                value="programming"
+              >
                 Programming & Scripting
               </TabsTrigger>
-              <TabsTrigger className="text-[0.75rem] md:text-[0.95rem]" value="webdev">Web Development</TabsTrigger>
-              <TabsTrigger className="text-[0.75rem] md:text-[0.95rem]" value="ml">Machine Learning</TabsTrigger>
+              <TabsTrigger
+                className="text-[0.75rem] md:text-[0.95rem]"
+                value="webdev"
+              >
+                Web Development
+              </TabsTrigger>
+              <TabsTrigger
+                className="text-[0.75rem] md:text-[0.95rem]"
+                value="ml"
+              >
+                Machine Learning
+              </TabsTrigger>
             </TabsList>
 
             <TabsContent className="mt-14 md:mt-10" value="programming">
@@ -208,7 +237,11 @@ function App() {
                           Hashiru Gunathilake
                         </h2>
                         <p className="text-sm md:text-base text-muted-foreground">
-                        o eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similiquur aut perferendis doloribus asperiores repellat."
+                          o eos et accusamus et iusto odio dignissimos ducimus
+                          qui blanditiis praesentium voluptatum deleniti atque
+                          corrupti quos dolores et quas molestias excepturi sint
+                          occaecati cupiditate non provident, similiquur aut
+                          perferendis doloribus asperiores repellat."
                         </p>
                       </div>
                     </CardContent>
@@ -225,7 +258,9 @@ function App() {
       </section>
 
       <section className="flex flex-col items-center my-20 mx-4">
-        <h1 className="text-4xl md:text-5xl font-bold mb-10">Connect with me</h1>
+        <h1 className="text-4xl md:text-5xl font-bold mb-10">
+          Connect with me
+        </h1>
         <div className="flex flex-wrap justify-center gap-7 border-2 border-slate-100 rounded-lg p-6">
           <Button className="p-10" variant="outline">
             <img
@@ -254,17 +289,28 @@ function App() {
         </div>
       </section>
       <Dialog>
-  <DialogTrigger className="fixed right-[5%] bottom-[7%] "><Button>Chat</Button></DialogTrigger>
-  <DialogContent>
-  <div className="flex w-full gap-2">
-      <Textarea placeholder="Type your message here."/>
-      <div className="flex items-center">
-      <Button>Send message</Button>
-      </div>
-      
-    </div>
-  </DialogContent>
-</Dialog>
+        <DialogTrigger className="fixed right-[5%] bottom-[7%] ">
+          <Button>Chat</Button>
+        </DialogTrigger>
+        <DialogContent>
+          <div className="flex flex-col w-full gap-2">
+            <div>
+              {messages.map((message, index) => (
+                <div key={index}>{message}</div> 
+              ))}
+            </div>
+
+            <Textarea
+              placeholder="Type your message here."
+              onChange={handleChange}
+            
+            />
+            <div className="flex items-center">
+              <Button onClick={handleSubmit}>Send message</Button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </>
   );
 }
