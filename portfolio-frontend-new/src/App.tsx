@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
+import whatsappicon from "./assets/whatsapp_icon1.svg";
+import chatbotIcon from "./assets/boticon.svg";
+import mailIcon from "./assets/mailicon.svg";
 import {
   Dialog,
   DialogContent,
@@ -75,14 +78,14 @@ function App() {
 
   return (
     <>
-      <section className="flex flex-col min-h-screen">
+      <section id="about" className="flex flex-col min-h-screen">
         <NavigationCustomized
           logo="Hashiru"
           navItems={[
             { href: "#about", description: "About" },
-            { href: "#about", description: "Skills" },
-            { href: "#about", description: "Projects" },
-            { href: "#about", description: "Contact" },
+            { href: "#skills", description: "Skills" },
+            { href: "#projects", description: "Projects" },
+            { href: "#contact", description: "Contact" },
           ]}
         ></NavigationCustomized>
         <div className="flex flex-col-reverse md:flex-row flex-grow items-center justify-center md:mt-0 mt-20">
@@ -97,14 +100,23 @@ function App() {
               An IT undergraduate at University of Moratuwa
             </p>
             <div className="flex justify-center md:justify-start mt-4">
-              <Button className="p-3 md:p-6">
-                <i className="devicon-github-original-wordmark text-2xl md:text-4xl"></i>
+              <Button className="p-3 md:p-6 ml-3 md:ml-5">
+                <a href="https://github.com/HashiruG">
+                  <i className="devicon-github-original-wordmark text-3xl md:text-4xl"></i>
+                </a>
               </Button>
               <Button className="p-3 md:p-6 ml-3 md:ml-5">
-                <i className="devicon-linkedin-plain-wordmark text-2xl md:text-4xl"></i>
+                <a href="https://www.linkedin.com/in/hashiru-gunathilake-59181930a/">
+                  <i className="devicon-linkedin-plain-wordmark text-3xl md:text-4xl"></i>
+                </a>
               </Button>
-              <Button className="p-3 md:p-6 ml-3 md:ml-5">
-                <i className="devicon-github-original-wordmark text-2xl md:text-4xl"></i>
+              <Button className="p-3 md:p-6 md:ml-5">
+                <a
+                  href="https://wa.me/94718740515?text=Hello!%2C%20I%20would%20like%20to%20inquire%20about%20your%20technicalservices%21
+"
+                >
+                  <img className="w-9" src={whatsappicon}></img>
+                </a>
               </Button>
             </div>
           </div>
@@ -117,7 +129,10 @@ function App() {
         </div>
       </section>
 
-      <section className="flex flex-col items-center justify-center h-auto min-h-screen">
+      <section
+        id="skills"
+        className="flex flex-col items-center justify-center h-auto min-h-screen"
+      >
         <h1 className="text-4xl md:text-5xl font-extrabold mb-5 md:mb-10 md:mt-2 mt-20">
           My Skills
         </h1>
@@ -251,7 +266,10 @@ function App() {
         </div>
       </section>
 
-      <section className="flex flex-col items-center justify-center min-h-screen px-4">
+      <section
+        id="projects"
+        className="flex flex-col items-center justify-center min-h-screen px-4"
+      >
         <h1 className="text-4xl md:text-5xl font-extrabold md:mt-0 mt-20 mb-6 md:mb-10">
           My Projects
         </h1>
@@ -263,15 +281,14 @@ function App() {
                 <div className="p-1">
                   <Card>
                     <CardContent className="flex flex-col md:flex-row p-4 items-center">
-                  
                       <img
-                        className="w-full md:w-72 md:h-72 border-1 rounded-lg mb-4 md:mb-0"
+                        className="w-[18rem] h-[18rem] md:w-[22rem] md:h-[22rem] border-1 rounded-lg mb-4 md:mb-0"rem
                         src={project.url}
                         alt="./assets/project1.jpg"
                       />
-                 
-                      <div className="flex flex-col justify-start px-0 md:px-6">
-                        <h2 className="text-xl md:text-2xl font-semibold">
+
+                      <div className="flex flex-col justify-start py-3 ml-7px-0 md:px-6">
+                        <h2 className="text-xl md:text-2xl py-3 font-semibold">
                           {project.name}
                         </h2>
                         <p
@@ -297,40 +314,50 @@ function App() {
         </Carousel>
       </section>
 
-      <section className="flex flex-col items-center my-20 mx-4">
+      <section id="contact" className="flex flex-col items-center my-20 mx-4">
         <h1 className="text-4xl md:text-5xl font-bold mb-10">
           Connect with me
         </h1>
         <div className="flex flex-wrap justify-center gap-7 border-2 border-slate-100 rounded-lg p-6">
           <Button className="p-10" variant="outline">
-            <img
-              className="w-[6rem] h-[4rem]"
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain-wordmark.svg"
-            />
+            <a href="https://www.linkedin.com/in/hashiru-gunathilake-59181930a/">
+              <img
+                className="w-[6rem] h-[4rem]"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain-wordmark.svg"
+              />
+            </a>
           </Button>
           <Button className="p-10" variant="outline">
-            <img
-              className="w-[6rem] h-[4rem]"
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg"
-            />
+            <a href="https://github.com/HashiruG">
+              <img
+                className="w-[6rem] h-[4rem]"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg"
+              />
+            </a>
           </Button>
           <Button className="p-10" variant="outline">
-            <img
-              className="w-[6rem] h-[4rem]"
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain-wordmark.svg"
-            />
+            <a
+              href="https://wa.me/94718740515?text=Hello!%2C%20I%20would%20like%20to%20inquire%20about%20your%20technicalservices%21
+"
+            >
+              <img className="w-[6rem] h-[4rem]" src={whatsappicon}></img>
+            </a>
           </Button>
           <Button className="p-10" variant="outline">
-            <img
-              className="w-[6rem] h-[4rem]"
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg"
-            />
+            <a href="mailto:gunathilakekrhh.22@uom.lk">
+              <img
+                className="w-[5rem] h-[4rem]"
+                src={mailIcon}
+              />
+            </a>
           </Button>
         </div>
       </section>
       <Dialog>
         <DialogTrigger className="fixed right-[5%] bottom-[7%] ">
-          <Button>Chat</Button>
+          <Button className="h-16" variant="outline">
+            <img src={chatbotIcon}></img>
+          </Button>
         </DialogTrigger>
 
         <DialogContent className="w-[400px]">
