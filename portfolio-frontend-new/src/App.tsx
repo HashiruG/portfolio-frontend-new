@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import whatsappicon from "./assets/whatsapp_icon1.svg";
 import chatbotIcon from "./assets/boticon.svg";
 import mailIcon from "./assets/mailicon.svg";
+import profile from "./assets/profile-pic (1).png"
 import {
   Dialog,
   DialogContent,
@@ -123,7 +124,7 @@ function App() {
 
           <div className="flex justify-center items-center w-full md:w-62/100 p-4">
             <Avatar className="w-[300px] h-[300px] md:w-[460px] md:h-[460px]">
-              <AvatarImage src="https://github.com/shadcn.png" />
+              <AvatarImage src={profile} />
             </Avatar>
           </div>
         </div>
