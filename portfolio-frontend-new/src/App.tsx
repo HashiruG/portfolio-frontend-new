@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import NavigationCustomized from "./components/ui/navigation-customized";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -22,6 +22,10 @@ import {
 } from "@/components/ui/carousel";
 
 function App() {
+  const [input, setInput] = useState("");
+  const [messages, setMessages] = useState([]);
+  const [projects, setProjects] = useState([]);
+
   const sendMessage = async (message) => {
     const response = await fetch("http://localhost:8000/chat", {
       method: "POST",
@@ -34,8 +38,30 @@ function App() {
     return data.response;
   };
 
-  const [input, setInput] = useState("");
-  const [messages, setMessages] = useState([]);
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch("http://localhost:8000/projects", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch projects");
+        }
+
+        const data = await response.json();
+        setProjects(data);
+        console.log(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchProjects();
+  }, []);
 
   const handleChange = (e) => {
     setInput(e.target.value);
@@ -232,27 +258,31 @@ function App() {
 
         <Carousel className="w-full max-w-sm md:max-w-4xl mt-8">
           <CarouselContent>
-            {Array.from({ length: 3 }).map((_, index) => (
+            {projects.map((project, index) => (
               <CarouselItem className="basis-full" key={index}>
                 <div className="p-1">
                   <Card>
-                    <CardContent className="flex flex-col md:flex-row p-4">
+                    <CardContent className="flex flex-col md:flex-row p-4 items-center">
+                  
                       <img
                         className="w-full md:w-72 md:h-72 border-1 rounded-lg mb-4 md:mb-0"
-                        src="https://github.com/shadcn.png"
-                        alt="Project Image"
+                        src={project.url}
+                        alt="./assets/project1.jpg"
                       />
+                 
                       <div className="flex flex-col justify-start px-0 md:px-6">
                         <h2 className="text-xl md:text-2xl font-semibold">
-                          Hashiru Gunathilake
+                          {project.name}
                         </h2>
-                        <p className="text-sm md:text-base text-muted-foreground">
-                          o eos et accusamus et iusto odio dignissimos ducimus
-                          qui blanditiis praesentium voluptatum deleniti atque
-                          corrupti quos dolores et quas molestias excepturi sint
-                          occaecati cupiditate non provident, similiquur aut
-                          perferendis doloribus asperiores repellat."
-                        </p>
+                        <p
+                          className="text-sm md:text-base text-muted-foreground"
+                          dangerouslySetInnerHTML={{
+                            __html: project.description.replace(
+                              /\n/g,
+                              "<br />"
+                            ),
+                          }}
+                        ></p>
                       </div>
                     </CardContent>
                   </Card>
