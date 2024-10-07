@@ -7,14 +7,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const AddSkills = () => {
   const [skillName, setSkillName] = useState("");
   const [skillURL, setSkillURL] = useState("");
+  const [category, setCategory] = useState("");
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     const skillData = {
-        skillName: skillName,
-        skillURL: skillURL
-    }
+      skillName: skillName,
+      skillURL: skillURL,
+      category: category,
+    };
 
     try {
       const response = await fetch("http://localhost:8000/skills", {
@@ -29,15 +31,14 @@ const AddSkills = () => {
         console.log("Skill added successfully!");
         setSkillName("");
         setSkillURL("");
+        setCategory("");
       } else {
         console.error("Failed to add skill.");
       }
     } catch (error) {
       console.error("Error:", error);
     }
-
-
-  }
+  };
   return (
     <>
       <Card>
@@ -65,14 +66,14 @@ const AddSkills = () => {
               placeholder="Enter Icon URL"
               onChange={(e) => setSkillURL(e.target.value)}
             />
-             <Label htmlFor="category">Category:</Label>
+            <Label htmlFor="category">Category:</Label>
             <Input
               className="my-2"
-              id="url"
+              id="category"
               type="text"
               name="category"
               placeholder="Enter Category (Programming, Web Development, Machine Learning)"
-              onChange={(e) => setSkillURL(e.target.value)}
+              onChange={(e) => setCategory(e.target.value)}
             />
 
             <Button className="my-2" type="submit">
