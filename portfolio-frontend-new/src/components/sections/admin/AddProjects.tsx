@@ -63,6 +63,7 @@ const AddProjects = () => {
               type="text"
               placeholder="Enter Project Title"
               value={name}
+              name="name"
               onChange={(e) => setName(e.target.value)} 
             />
 
@@ -72,6 +73,7 @@ const AddProjects = () => {
               id="description"
               placeholder="Enter Project Description"
               value={description}
+              name="description"
               onChange={(e) => setDescription(e.target.value)}
             />
 
@@ -80,6 +82,7 @@ const AddProjects = () => {
               className="my-2"
               id="img"
               type="file"
+              name="image"
               onChange={handleImageChange} 
             />
             <Button className="my-2" type="submit">
