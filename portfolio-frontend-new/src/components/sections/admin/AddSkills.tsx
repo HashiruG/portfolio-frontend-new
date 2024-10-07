@@ -46,11 +46,12 @@ const AddSkills = () => {
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit}>
-            <Label htmlFor="name">Skill Name:</Label>
+            <Label htmlFor="skillname">Skill Name:</Label>
             <Input
               className="my-2"
               id="name"
               type="text"
+              name="skillname"
               placeholder="Enter Skill Name"
               onChange={(e) => setSkillName(e.target.value)}
             />
@@ -60,7 +61,17 @@ const AddSkills = () => {
               className="my-2"
               id="url"
               type="text"
+              name="url"
               placeholder="Enter Icon URL"
+              onChange={(e) => setSkillURL(e.target.value)}
+            />
+             <Label htmlFor="category">Category:</Label>
+            <Input
+              className="my-2"
+              id="url"
+              type="text"
+              name="category"
+              placeholder="Enter Category (Programming, Web Development, Machine Learning)"
               onChange={(e) => setSkillURL(e.target.value)}
             />
 
