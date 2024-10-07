@@ -284,7 +284,7 @@ const HomePage = () => {
                     <CardContent className="flex flex-col md:flex-row p-4 items-center">
                       <img
                         className="w-[18rem] h-[18rem] md:w-[22rem] md:h-[22rem] border-1 rounded-lg mb-4 md:mb-0"
-                        src={project.url}
+                        src={project.image_url}
                         alt="./assets/project1.jpg"
                       />
 
