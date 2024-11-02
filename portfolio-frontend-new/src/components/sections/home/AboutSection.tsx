@@ -39,7 +39,7 @@ const AboutSection = () =>{
                   <i className="devicon-linkedin-plain-wordmark text-3xl md:text-4xl"></i>
                 </a>
               </Button>
-              <Button className="p-3 md:p-6 md:ml-5">
+              <Button className="p-3 md:p-6 ml-3 md:ml-5">
                 <a
                   href="https://wa.me/94718740515?text=Hello!%2C%20I%20would%20like%20to%20inquire%20about%20your%20technicalservices%21
 "
