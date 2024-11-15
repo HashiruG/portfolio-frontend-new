@@ -41,13 +41,13 @@ const ChatUI = () => {
   return (
     <>
       <Dialog>
-        <DialogTrigger className="fixed right-[5%] bottom-[7%] ">
+        <DialogTrigger className="fixed  right-[9%] md:right-[4%] bottom-[4%] ">
           <Button className="h-16" variant="outline">
             <img src={chatbotIcon}></img>
           </Button>
         </DialogTrigger>
 
-        <DialogContent className="w-[400px]">
+        <DialogContent className="w-[300px] md:w-[400px] fixed left-[60%] md:fixed md:left-[85%]">
           <div className="flex flex-col gap-2">
             <DialogHeader>
               <DialogTitle className="py-4">Chat Bot</DialogTitle>
