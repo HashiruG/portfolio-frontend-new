@@ -4,11 +4,15 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
-export default function NavigationCustomized(props) {
+interface NavigationProps {
+  logo: string;
+  navItems: { href: string; description: string }[];
+}
+
+export default function NavigationCustomized(props: NavigationProps) {
   const [visible, setVisible] = useState(true);
   const [lastScroll, setLastScroll] = useState(0);
 

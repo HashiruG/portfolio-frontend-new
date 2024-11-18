@@ -2,14 +2,18 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card } from "@/components/ui/card";
 import { useState, useEffect } from "react";
 
+interface Skill {
+  skillURL: string;
+}
+
 const SkillsSection = () => {
-  const [programmingSkills, setProgrammingSkills] = useState([]);
-  const [webSkills, setWebSkills] = useState([]);
-  const [mlSkills, setMlSkills] = useState([]);
+  const [programmingSkills, setProgrammingSkills] = useState<Skill[]>([]);
+  const [webSkills, setWebSkills] = useState<Skill[]>([]);
+  const [mlSkills, setMlSkills] = useState<Skill[]>([]);
 
   const fetchProgrammingSkills = async () => {
     try {
-      const response = await fetch("http://localhost:8000/programming_skills");
+      const response = await fetch("https://portfoliobackend-hub5cqg9d7c6bxat.canadacentral-01.azurewebsites.net/programming_skills");
       const data = await response.json();
       setProgrammingSkills(data);
     } catch (error) {
@@ -19,7 +23,7 @@ const SkillsSection = () => {
 
   const fetchWebSkills = async () => {
     try {
-      const response = await fetch("http://localhost:8000/web");
+      const response = await fetch("https://portfoliobackend-hub5cqg9d7c6bxat.canadacentral-01.azurewebsites.net/web");
       const data = await response.json();
       setWebSkills(data);
     } catch (error) {
@@ -29,7 +33,7 @@ const SkillsSection = () => {
 
   const fetchMlSkills = async () => {
     try {
-      const response = await fetch("http://localhost:8000/ml");
+      const response = await fetch("https://portfoliobackend-hub5cqg9d7c6bxat.canadacentral-01.azurewebsites.net/ml");
       const data = await response.json();
       setMlSkills(data);
     } catch (error) {

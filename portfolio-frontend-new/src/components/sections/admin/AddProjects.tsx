@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -9,21 +8,23 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 const AddProjects = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState<File | null>(null);
 
   
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
   
     const formData = new FormData();
     formData.append("name", name); 
     formData.append("description", description); 
-    formData.append("image", image); 
+    if (image) {
+      formData.append("image", image);
+    }
 
     try {
      
-      const response = await fetch("http://localhost:8000/projects", {
+      const response = await fetch("https://portfoliobackend-hub5cqg9d7c6bxat.canadacentral-01.azurewebsites.net/projects", {
         method: "POST",
         body: formData,
       });
@@ -44,8 +45,10 @@ const AddProjects = () => {
     }
   };
 
-  const handleImageChange = (e) => {
-    setImage(e.target.files[0]);
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setImage(e.target.files[0]);
+    }
   };
 
   return (

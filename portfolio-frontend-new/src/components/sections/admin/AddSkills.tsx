@@ -9,7 +9,7 @@ const AddSkills = () => {
   const [skillURL, setSkillURL] = useState("");
   const [category, setCategory] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const skillData = {
@@ -19,7 +19,7 @@ const AddSkills = () => {
     };
 
     try {
-      const response = await fetch("http://localhost:8000/skills", {
+      const response = await fetch("https://portfoliobackend-hub5cqg9d7c6bxat.canadacentral-01.azurewebsites.net/skills", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

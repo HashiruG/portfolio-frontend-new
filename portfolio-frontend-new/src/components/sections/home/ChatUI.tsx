@@ -6,7 +6,6 @@ import chatbotIcon from "../../../assets/boticon.svg"
 import {
     Dialog,
     DialogContent,
-    DialogDescription,
     DialogHeader,
     DialogTitle,
     DialogTrigger,
@@ -14,10 +13,10 @@ import {
 
 const ChatUI = () => {
   const [input, setInput] = useState("");
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState<string[]>([]);
 
-  const sendMessage = async (message) => {
-    const response = await fetch("http://localhost:8000/chat", {
+  const sendMessage = async (message: string) => {
+    const response = await fetch("https://portfoliobackend-hub5cqg9d7c6bxat.canadacentral-01.azurewebsites.net/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -28,7 +27,7 @@ const ChatUI = () => {
     return data.response;
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInput(e.target.value);
   };
 

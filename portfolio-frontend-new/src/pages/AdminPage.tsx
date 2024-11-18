@@ -1,4 +1,3 @@
-import React from "react";
 import NavigationCustomized from "@/components/ui/navigation-customized";
 import AddProjects from "@/components/sections/admin/AddProjects";
 import AddSkills from "@/components/sections/admin/AddSkills";

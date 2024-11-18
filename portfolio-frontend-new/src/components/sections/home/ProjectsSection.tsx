@@ -10,12 +10,18 @@ import {
 } from "@/components/ui/carousel";
 
 const ProjectsSection = () => {
-  const [projects, setProjects] = useState([]);
+  interface Project {
+    image_url: string;
+    name: string;
+    description: string;
+  }
+
+  const [projects, setProjects] = useState<Project[]>([]);
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch("http://localhost:8000/projects", {
+        const response = await fetch("https://portfoliobackend-hub5cqg9d7c6bxat.canadacentral-01.azurewebsites.net/projects", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
