@@ -36,7 +36,7 @@ export default function NavigationCustomized(props: NavigationProps) {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 bg-white shadow-md z-50 p-5 transition-transform duration-300 ${visible ? 'translate-y-0' : '-translate-y-full'}`}>
-      <div className="flex justify center md:justify-between items-center">
+      <div className="flex mx-4 justify center md:justify-between items-center">
         <h1 className="md:block hidden text-5xl font-protest">{props.logo}</h1>
         <NavigationMenu>
           <NavigationMenuList className="flex space-x-4">
