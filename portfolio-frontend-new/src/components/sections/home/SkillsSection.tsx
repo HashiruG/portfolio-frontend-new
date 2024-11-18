@@ -57,19 +57,19 @@ const SkillsSection = () => {
           <Tabs defaultValue="webdev" className="w-full max-w-2xl ">
             <TabsList className="flex flex-wrap justify-center mb-2 md:mb-3">
               <TabsTrigger
-                className="text-[0.75rem] md:text-[0.95rem]"
+                className="text-[0.65rem] md:text-[0.95rem]"
                 value="programming"
               >
                 Programming & Scripting
               </TabsTrigger>
               <TabsTrigger
-                className="text-[0.75rem] md:text-[0.95rem]"
+                className="text-[0.65rem] md:text-[0.95rem]"
                 value="webdev"
               >
                 Web Development
               </TabsTrigger>
               <TabsTrigger
-                className="text-[0.75rem] md:text-[0.95rem]"
+                className="text-[0.65rem] md:text-[0.95rem]"
                 value="ml"
               >
                 Machine Learning
