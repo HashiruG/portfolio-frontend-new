@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const AddProjects = () => {
   const [name, setName] = useState("");
+  const [github_link, setGithub_link] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState<File | null>(null);
 
@@ -18,6 +19,7 @@ const AddProjects = () => {
     const formData = new FormData();
     formData.append("name", name); 
     formData.append("description", description); 
+    formData.append("github_link", github_link);
     if (image) {
       formData.append("image", image);
     }
@@ -35,6 +37,7 @@ const AddProjects = () => {
        
         setName("");
         setDescription("");
+        setGithub_link("")
         setImage(null);
       } else {
       
@@ -87,6 +90,16 @@ const AddProjects = () => {
               type="file"
               name="image"
               onChange={handleImageChange} 
+            />
+            <Label htmlFor="github_link">Github Link:</Label>
+            <Input
+              className="my-2"
+              id="github_link"
+              type="text"
+              placeholder="Enter Github Link"
+              value={github_link}
+              name="github_link"
+              onChange={(e) => setGithub_link(e.target.value)} 
             />
             <Button className="my-2" type="submit">
               Submit

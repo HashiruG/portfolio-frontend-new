@@ -33,14 +33,14 @@ const ChatUI = () => {
 
   const handleSubmit = async () => {
     setMessages((prev) => [...prev, input]);
+    setInput("");
     const response = await sendMessage(input);
-    setMessages((prev) => [...prev, response]);
-  };
-
+    setMessages((prev) => [...prev, response]); 
+}
   return (
     <>
       <Dialog>
-        <DialogTrigger className="fixed  right-[9%] md:right-[4%] bottom-[4%] ">
+        <DialogTrigger className="fixed  right-[9%] md:right-[4%] bottom-[2%] ">
           <Button className="h-16" variant="outline">
             <img src={chatbotIcon}></img>
           </Button>
@@ -69,6 +69,7 @@ const ChatUI = () => {
             <Textarea
               placeholder="Type your message here."
               onChange={handleChange}
+              value={input}
             />
             <div className="flex items-center">
               <Button onClick={handleSubmit}>Send message</Button>

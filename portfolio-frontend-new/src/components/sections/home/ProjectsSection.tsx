@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
 
 import {
   Carousel,
@@ -14,6 +15,7 @@ const ProjectsSection = () => {
     image_url: string;
     name: string;
     description: string;
+    github_link: string;
   }
 
   const [projects, setProjects] = useState<Project[]>([]);
@@ -48,11 +50,11 @@ const ProjectsSection = () => {
       id="projects"
       className="flex flex-col items-center justify-center min-h-screen px-4"
     >
-      <h1 className="text-4xl md:text-5xl font-extrabold md:mt-0 mt-20 mb-6 md:mb-10">
+      <h1 className="text-4xl md:text-5xl font-extrabold md:mt-0 mt-4  md:mb-10">
         My Projects
       </h1>
 
-      <Carousel className="w-full max-w-sm md:max-w-4xl mt-8">
+      <Carousel className="w-[79%] md:max-w-4xl mt-8">
         <CarouselContent>
           {projects.map((project, index) => (
             <CarouselItem className="basis-full" key={index}>
@@ -60,7 +62,7 @@ const ProjectsSection = () => {
                 <Card>
                   <CardContent className="flex flex-col md:flex-row p-4 items-center">
                     <img
-                      className="w-[22rem] h-[16rem] md:w-[22rem] md:h-[19rem] border-1 rounded-lg mb-4 md:mb-0"
+                      className="w-[22rem] h-[16rem] md:w-[19rem] md:h-[19rem] border-1 rounded-lg mb-4 md:mb-0"
                       src={project.image_url}
                       alt={`${project.name} image`}
                     />
@@ -75,6 +77,7 @@ const ProjectsSection = () => {
                           __html: project.description.replace(/\n/g, "<br />"),
                         }}
                       ></p>
+                      <Button className="mt-6 md:w-[30%]"><a href={project.github_link}>Github Repository</a></Button>
                     </div>
                   </CardContent>
                 </Card>

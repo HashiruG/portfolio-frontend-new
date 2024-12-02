@@ -5,7 +5,7 @@ import mailIcon from "../../../assets/mailIcon.svg";
 const ContactSection = () => {
     return(
         <>
-            <section id="contact" className="flex flex-col items-center my-20 mx-4">
+            <section id="contact" className="flex flex-col items-center mb-12 mx-4">
         <h1 className="text-4xl md:text-5xl font-bold mb-10">
           Connect with me
         </h1>

@@ -53,7 +53,7 @@ const SkillsSection = () => {
         id="skills"
         className="flex flex-col items-center justify-center h-auto min-h-screen"
       >
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-5 md:mb-10 md:mt-2 mt-20">
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-5 md:mb-10 md:mt-2 mt-12">
           My Skills
         </h1>
 
@@ -64,7 +64,7 @@ const SkillsSection = () => {
                 className="text-[0.65rem] md:text-[0.95rem]"
                 value="programming"
               >
-                Programming & Scripting
+                Programming 
               </TabsTrigger>
               <TabsTrigger
                 className="text-[0.65rem] md:text-[0.95rem]"
