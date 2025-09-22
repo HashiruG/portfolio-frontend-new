@@ -32,16 +32,13 @@ const ChatUI = () => {
   }, [messages]);
 
   const sendMessage = async (message: string) => {
-    const response = await fetch(
-      "https://portfoliobackend-hub5cqg9d7c6bxat.canadacentral-01.azurewebsites.net/chat",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ message: message }),
-      }
-    );
+    const response = await fetch("https://portfolioredeploy-fkh5ercxatgaadf7.centralindia-01.azurewebsites.net/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ message: message }),
+    });
     const data = await response.json();
     return data.response;
   };
@@ -79,22 +76,20 @@ const ChatUI = () => {
   };
   return (
     <>
-      <Dialog>
-        <DialogTrigger className="fixed  right-[9%] md:right-[4%] bottom-[2%] ">
+      <Dialog> 
+        <DialogTrigger className="fixed  right-[9%] md:right-[4%] bottom-[2%]">
           <Button className="h-16" variant="outline">
             <img src={chatbotIcon}></img>
           </Button>
         </DialogTrigger>
 
-        <DialogContent className="w-[300px] md:w-[400px] fixed left-[60%] md:fixed md:left-[85%] h-[70%">
-          <div className="flex flex-col gap-2">
-            <DialogHeader>
-              <DialogTitle className="py-1">Chat Bot</DialogTitle>
-            </DialogHeader>
+        <DialogContent className="w-[300px] md:w-[450px] fixed left-[60%] md:fixed md:left-[85%] [&>div]:!max-h-none ">
+          <DialogHeader>
+            <DialogTitle className="py-1">Chat Bot</DialogTitle>
+          </DialogHeader>
             <div
               ref={chatContainerRef}
-              className="flex flex-col overflow-y-auto h-[190px]"
-            >
+              className="flex flex-col overflow-y-auto h-[350px]">
               {messages.map((message, index) => (
                 <div
                   key={index}
@@ -129,7 +124,7 @@ const ChatUI = () => {
                 Send message
               </Button>
             </div>
-          </div>
+    
           {error && (
             <p className=" text-red-500 text-sm">
               {error} <OctagonAlert className="inline h-4 w-4" />

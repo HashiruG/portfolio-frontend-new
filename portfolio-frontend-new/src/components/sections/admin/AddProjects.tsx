@@ -25,8 +25,9 @@ const AddProjects = () => {
     }
 
     try {
-     
-      const response = await fetch("https://portfoliobackend-hub5cqg9d7c6bxat.canadacentral-01.azurewebsites.net/projects", {
+      console.log(formData);
+      
+      const response = await fetch("https://portfolioredeploy-fkh5ercxatgaadf7.centralindia-01.azurewebsites.net/projects", {
         method: "POST",
         body: formData,
       });
@@ -34,6 +35,8 @@ const AddProjects = () => {
       if (response.ok) {
        
         console.log("Project added successfully!");
+       
+        
        
         setName("");
         setDescription("");
