@@ -13,7 +13,7 @@ const SkillsSection = () => {
 
   const fetchProgrammingSkills = async () => {
     try {
-      const response = await fetch("https://portfoliobackend-hub5cqg9d7c6bxat.canadacentral-01.azurewebsites.net/programming_skills");
+      const response = await fetch("https://portfolioredeploy-fkh5ercxatgaadf7.centralindia-01.azurewebsites.net/programming_skills");
       const data = await response.json();
       setProgrammingSkills(data);
     } catch (error) {
@@ -23,7 +23,7 @@ const SkillsSection = () => {
 
   const fetchWebSkills = async () => {
     try {
-      const response = await fetch("https://portfoliobackend-hub5cqg9d7c6bxat.canadacentral-01.azurewebsites.net/web");
+      const response = await fetch("https://portfolioredeploy-fkh5ercxatgaadf7.centralindia-01.azurewebsites.net/web");
       const data = await response.json();
       setWebSkills(data);
     } catch (error) {
@@ -33,7 +33,7 @@ const SkillsSection = () => {
 
   const fetchMlSkills = async () => {
     try {
-      const response = await fetch("https://portfoliobackend-hub5cqg9d7c6bxat.canadacentral-01.azurewebsites.net/ml");
+      const response = await fetch("https://portfolioredeploy-fkh5ercxatgaadf7.centralindia-01.azurewebsites.net//ml");
       const data = await response.json();
       setMlSkills(data);
     } catch (error) {

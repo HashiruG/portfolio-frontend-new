@@ -19,7 +19,7 @@ const AddSkills = () => {
     };
 
     try {
-      const response = await fetch("https://portfoliobackend-hub5cqg9d7c6bxat.canadacentral-01.azurewebsites.net/skills", {
+      const response = await fetch("https://portfolioredeploy-fkh5ercxatgaadf7.centralindia-01.azurewebsites.net/skills", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

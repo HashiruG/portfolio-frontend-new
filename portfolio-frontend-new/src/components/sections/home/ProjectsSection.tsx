@@ -23,7 +23,7 @@ const ProjectsSection = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch("https://portfoliobackend-hub5cqg9d7c6bxat.canadacentral-01.azurewebsites.net/projects", {
+        const response = await fetch("https://portfolioredeploy-fkh5ercxatgaadf7.centralindia-01.azurewebsites.net/projects", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
